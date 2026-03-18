@@ -22,20 +22,18 @@ header {
     height: 48px; 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .logo {
     font-weight: 600;
     font-size: 1.2rem;
-    letter-spacing: -0.02em;
-    margin-right: auto;
     color: #ffffff;
 }
 
 .logo span {
-    color: #00D4FF;
+    color: #00d4ff;
 }
 
 nav ul {
@@ -46,24 +44,29 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #86868b;
+    color: #00d4ff;
     font-size: 12px; 
     transition: color 0.2s;
 }
 
 nav a:hover {
-    color: #00D4FF;
+    color: #00d4ff;
 }
 
 .nav-cta {
-    margin-left: auto;
-    background: #00D4FF;
+    background: #00d4ff;
     color: #000;
     padding: 4px 12px;
     border-radius: 980px;
     font-size: 12px;
     text-decoration: none;
     font-weight: 600;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 80px 20px;
 }
 
 .hero {
@@ -74,30 +77,8 @@ nav a:hover {
 
 .hero h1 {
     font-size: 56px;
-    font-weight: 700;
+    color: #ffffff;
     margin-bottom: 10px;
-}
-
-.slogan {
-    font-size: 24px;
-    color: #86868b;
-    margin-bottom: 30px;
-}
-
-.container {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 80px 20px;
-}
-
-.bg-image-section {
-    padding: 150px 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                      url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
-    text-align: center;
 }
 
 .hero-medical {
@@ -112,16 +93,28 @@ nav a:hover {
 }
 
 .hero-medical h1 {
+    color: #ffffff; 
     font-size: 64px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.bg-image-section {
+    padding: 150px 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                      url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
     text-align: center;
 }
 
 h2 {
     font-size: 40px;
+    color: #ffffff;
     margin-bottom: 50px;
     text-align: center;
 }
 
+/* kort och griddy */
 .function-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -133,37 +126,91 @@ h2 {
     padding: 40px;
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.35s ease;
+}
+
+.func-card:hover {
+    transform: scale(1.05);
 }
 
 .badge {
     font-size: 12px;
     font-weight: 600;
-    color: #00D4FF;
+    color: #00d4ff;
     margin-bottom: 10px;
     display: block;
 }
 
+
+.founder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.founder-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #161617;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.founder-image {
+    width: 80px;
+    height: 80px;
+    background: #d2d2d7;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.founder-info h3 {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.info-section {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.school-image-container {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.school-image {
+    width: 100%;
+    display: block;
+    opacity: 0.8;
+}
+
+/* footer */
 footer {
     background: #101828;
     padding: 60px 20px;
     color: #00D4FF;
     font-size: 12px;
     text-align: center;
-    max-width: auto;
     margin: 0 auto;
     border-top: 4px solid #00D4FF;
 }
 
 /* responsivitet */
 @media (max-width: 768px) {
-    .function-grid {
+    .function-grid, .founder-grid, .info-section {
         grid-template-columns: 1fr;
     }
-    .hero-medical h1, .hero h1 {
+    .hero h1, .hero-medical h1 {
         font-size: 32px;
     }
     nav ul {
         display: none;
     }
 }
-/* enhetlighet */
