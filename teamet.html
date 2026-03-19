@@ -10,14 +10,22 @@
 
     <header>
         <div class="logo">LiL <span>Prio</span></div>
-        <nav>
-            <ul>
+
+        <div class="menu-container">
+            <button class="dots-button" onclick="toggleMenu()" aria-label="Meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div id="popup-menu" class="dropdown-content">
                 <li><a href="index.html">Hem</a></li>
                 <li><a href="index.html#market">Affärsmodell</a></li>
                 <li><a href="planer.html">Vår Strategi</a></li>
                 <li><a href="teamet.html">Teamet</a></li>
-            </ul>
-        </nav>
+            </div>
+        </div>
+
         <a href="boka.html" class="nav-cta">Demo</a>
     </header>
 
@@ -82,5 +90,23 @@
         </div>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById("popup-menu").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dots-button') && !event.target.parentElement.matches('.dots-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+	
 </body>
 </html>
