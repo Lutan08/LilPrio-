@@ -45,8 +45,8 @@ nav ul {
 nav a {
     text-decoration: none;
     color: #00d4ff;
-    font-size: 12px; 
-    transition: color 0.2s;
+    font-size: 13px; 
+    transition: color 0.5s;
 }
 
 nav a:hover {
@@ -79,6 +79,11 @@ nav a:hover {
     font-size: 56px;
     color: #ffffff;
     margin-bottom: 10px;
+	text-align:center;
+}
+
+.p {
+	text-align: center;
 }
 
 .hero-medical {
@@ -96,6 +101,7 @@ nav a:hover {
     color: #ffffff; 
     font-size: 64px;
     text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+	text-align: center;
 }
 .bg-image-section {
     padding: 150px 0;
@@ -124,7 +130,8 @@ h2 {
 .func-card, .apple-box {
     background: #161617;
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 15px;
+	text-align: center;
     border: 1px solid rgba(255,255,255,0.05);
     transition: transform 0.35s ease;
 }
