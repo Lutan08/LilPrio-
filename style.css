@@ -1,3 +1,4 @@
+/* --- 1. GRUNDINSTÄLLNINGAR --- */
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +8,12 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #000000;
-    color: #f5f5f7;
+    background-color: #000000; /* Helt svart bakgrund för djup */
+    color: #f5f5f7; /* Ljusgrå text (Apple-standard) */
     line-height: 1.5;
 }
 
+/* --- 2. HEADER & NAVIGERING --- */
 header {
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: saturate(180%) blur(20px);
@@ -19,63 +21,94 @@ header {
     top: 0;
     z-index: 9999;
     padding: 0 22px;
-    height: 48px; 
+    height: 60px; 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    justify-content: space-between; /* Skjuter isär vänster-gruppen och Demo-knappen */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* --- popup-meny (kebab meny) --- */
 
-/* behållare för prickar och meny */
+/* Håller ihop menyn och loggan på vänster sida */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #00d4ff; /* Din signaturfärg (Cyan) */
+}
+
+.nav-cta {
+    background: #00d4ff;
+    color: #000;
+    padding: 6px 16px;
+    border-radius: 980px;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.nav-cta:hover {
+    transform: scale(1.05);
+    background: #00b8e6;
+}
+
+/* --- 3. POPUP-MENY (KEBAB MENY) --- */
 .menu-container {
     position: relative;
-    display: inline-block;
+    margin: 0;
 }
 
-/* själva knappen med de tre prickarna */
 .dots-button {
     background: none;
     border: none;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 4px; /* avstånd mellan prickarna */
+    gap: 4px;
     padding: 10px;
     outline: none;
 }
 
-/* de enskilda prickarna */
 .dots-button span {
     width: 4px;
     height: 4px;
-    background-color: #86868b; /* apple-grå */
+    background-color: #86868b;
     border-radius: 50%;
     transition: background-color 0.2s, transform 0.2s;
 }
 
-/* färgbyte när man hovrar över prickarna */
 .dots-button:hover span {
-    background-color: #00d4ff; /* din cyan-färg */
+    background-color: #00d4ff;
     transform: scale(1.2);
 }
 
-/* själva popup-rutan */
 .dropdown-content {
-    display: none; /* dold som standard */
+    display: none;
     position: absolute;
-    right: 0; /* placeras till höger om knappen */
+    left: 0; /* Fäster menyn på vänsterkanten rakt under prickarna */
     top: 45px;
-    background-color: #1c1c1e; /* något ljusare mörkgrå för kontrast */
+    background-color: #1c1c1e;
     min-width: 180px;
-    border-radius: 14px; /* rundade hörn enligt apple-stil */
+    border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
     z-index: 10000;
-    overflow: hidden; /* så att hovringseffekten inte går utanför hörnen */
+    overflow: hidden;
 }
 
-/* länkarna inuti popup-menyn */
+.dropdown-content li {
+    list-style: none; /* Tar bort eventuella punkter från li-taggar */
+}
+
 .dropdown-content a {
     color: #f5f5f7;
     padding: 14px 20px;
@@ -86,84 +119,29 @@ header {
     transition: background 0.2s;
 }
 
-/* hovringseffekt för länkarna */
 .dropdown-content a:hover {
     background-color: rgba(255, 255, 255, 0.05);
     color: #00d4ff;
 }
 
-/* klassen som javascript lägger till för att visa menyn */
 .show {
     display: block !important;
-    animation: fadeIn 0.2s ease-out; /* snygg liten animation */
+    animation: fadeIn 0.2s ease-out;
 }
 
-/* enkel animation för att menyn ska dyka upp mjukt */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-.logo {
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #ffffff;
-}
-
-.logo span {
-    color: #00d4ff;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #00d4ff;
-    font-size: 13px; 
-    transition: color 0.5s;
-}
-
-nav a:hover {
-    color: #00d4ff;
-}
-
-.nav-cta {
-    background: #00d4ff;
-    color: #000;
-    padding: 4px 12px;
-    border-radius: 980px;
-    font-size: 12px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
+/* --- 4. LAYOUT OCH SEKTIONER --- */
 .container {
     max-width: 980px;
     margin: 0 auto;
     padding: 80px 20px;
 }
 
-.hero {
-    padding: 120px 20px;
-    text-align: center;
-    background: #000000;
-}
-
-.hero h1 {
-    font-size: 56px;
-    color: #ffffff;
-    margin-bottom: 10px;
-	text-align:center;
-}
-
-.p {
-	text-align: center;
-}
-
+/* Hero för landningssidan (med bakgrundsbild) */
 .hero-medical {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                 url('https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop');
@@ -173,22 +151,23 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    padding: 0 20px;
 }
 
 .hero-medical h1 {
     color: #ffffff; 
     font-size: 64px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
-	text-align: center;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
-.bg-image-section {
-    padding: 150px 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                      url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
-    text-align: center;
+
+.slogan {
+    font-size: 18px;
+    color: #f5f5f7;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 h2 {
@@ -198,38 +177,58 @@ h2 {
     text-align: center;
 }
 
-/* kort och griddy */
+/* Etiketter (Badges) */
+.badge {
+    font-size: 12px;
+    font-weight: 600;
+    color: #00d4ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* --- 5. KORT OCH GRID (Affärsmodell etc) --- */
 .function-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 .func-card, .apple-box {
     background: #161617;
     padding: 40px;
-    border-radius: 15px;
-	text-align: center;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: transform 0.35s ease;
+    border-radius: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s ease;
 }
 
 .func-card:hover {
     transform: scale(1.05);
 }
 
-.badge {
-    font-size: 12px;
-    font-weight: 600;
-    color: #00d4ff;
-    margin-bottom: 10px;
-    display: block;
+.func-card h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 15px;
 }
 
+.apple-box h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* --- 6. GRUNDARSIDAN --- */
+.main-title {
+    margin-bottom: 60px;
+    text-align: left;
+    color: #fff;
+    font-size: 48px;
+}
 
 .founder-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
@@ -238,12 +237,17 @@ h2 {
     align-items: center;
     gap: 20px;
     background: #161617;
-    padding: 20px;
+    padding: 25px;
     border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
 }
 
-.founder-image {
+.founder-card:hover {
+    transform: translateY(-5px);
+}
+
+.avatar {
     width: 80px;
     height: 80px;
     background: #d2d2d7;
@@ -251,12 +255,21 @@ h2 {
     flex-shrink: 0;
 }
 
-.founder-info h3 {
-    color: #ffffff;
-    font-size: 18px;
+.founder-text h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
 }
 
-.info-section {
+.founder-text p {
+    color: #86868b;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Skolsektionen på grundarsidan */
+.school-section {
     margin-top: 100px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -264,35 +277,51 @@ h2 {
     align-items: center;
 }
 
-.school-image-container {
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
+.school-info h2 {
+    text-align: left;
+    margin-bottom: 20px;
 }
 
-.school-image {
+.school-list {
+    color: #86868b;
+    list-style: none;
+    line-height: 2;
+    padding: 0;
+}
+
+.school-image-box {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.school-image-box img {
     width: 100%;
     display: block;
     opacity: 0.8;
 }
 
-/* footer */
+/* --- 7. FOOTER --- */
 footer {
-    background: #101828;
+    background: #000000;
     padding: 60px 20px;
-    color: #00D4FF;
-    font-size: 12px;
+    color: #86868b;
+    font-size: 13px;
     text-align: center;
-    margin: 0 auto;
-    border-top: 4px solid #00D4FF;
+    border-top: 5px solid rgba(255, 255, 255, 0.1);
 }
 
-/* responsivitet */
+/* --- 8. RESPONSIVITET (För Mobiler) --- */
 @media (max-width: 768px) {
-    .function-grid, .founder-grid, .info-section {
-        grid-template-columns: 1fr;
+    .function-grid, .founder-grid, .school-section {
+        grid-template-columns: 1fr; /* Gör så att allt hamnar i en kolumn på mobilen */
     }
-    .hero h1, .hero-medical h1 {
-        font-size: 32px;
+    
+    .hero-medical h1 {
+        font-size: 40px; /* Gör texten lite mindre på små skärmar */
+    }
+    
+    .container {
+        padding: 40px 20px;
     }
 }
