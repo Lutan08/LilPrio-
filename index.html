@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiL Prio  Intelligent Triage</title>
+    <title>LiL Prio | Intelligent Triage</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">LiL <span>Prio</span></div>
+        <div class="header-left">
+            <div class="menu-container">
+                <button class="dots-button" onclick="toggleMenu()" aria-label="Meny">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
-        <div class="menu-container">
-            <button class="dots-button" onclick="toggleMenu()" aria-label="Meny">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <div id="popup-menu" class="dropdown-content">
-                <li><a href="index.html">Hem</a></li>
-                <li><a href="index.html#market">Affärsmodell</a></li>
-                <li><a href="planer.html">Vår Strategi</a></li>
-                <li><a href="teamet.html">Teamet</a></li>
+                <nav>
+                    <ul id="popup-menu" class="dropdown-content">
+                        <li><a href="index.html">Hem</a></li>
+                        <li><a href="index.html#market">Affärsmodell</a></li>
+                        <li><a href="planer.html">Vår Strategi</a></li>
+                        <li><a href="teamet.html">Teamet</a></li>
+                    </ul>
+                </nav>
             </div>
+
+            <div class="logo">LiL <span>Prio</span></div>
         </div>
 
         <a href="boka.html" class="nav-cta">Demo</a>
@@ -33,15 +37,15 @@
         <section class="hero-medical" role="img" aria-label="Läkare som använder digital teknik">
             <div class="hero-content">
                 <h1>Rätt vård. <br>Bara ett klick bort.</h1>
-                <p class="slogan">LiL Prio använder avancerad AI för att prioritera patienter med precision, minska väntetider och avlasta vårdpersonalen.</p>
+                <p class="slogan">LiL Prio använder avancerad AI för att prioritera patienter med precision.</p>
             </div>
         </section>
-
+			<h2>Vision & Målgrupp</h3>
         <section id="about" class="container">
-            <div class="apple-box">
-                <span class="badge">Vision</span>
-                <h2>Sömlös integration.</h2>
-                <p>Vår teknik optimerar resursanvändningen inom sjukvården och avlastar akutmottagningar. Vi använder denna metod för att kunna ge större möjligheter för dig, men även för sjukhusen och regionerna. Genom att implementera smarta algoritmer minskar vi den kognitiva belastningen på läkare och sjuksköterskor, vilket leder till tryggare bedömningar.</p>
+            <div class="func-card">
+                <span class="badge">Vision & Målgrupp</span>
+                <h3>Sömlös integration för vårdgivare.</h3>
+                <p>Vår tjänst riktar sig primärt till <strong>regioner, sjukhus och vårdcentraler</strong> som kämpar med hög arbetsbelastning. Genom att integrera vår teknik optimerar vi resursanvändningen och avlastar akutmottagningar. Vi ger större möjligheter för både vårdpersonalen och patienterna.</p>
             </div>
         </section>
 
@@ -51,12 +55,12 @@
                 <div class="func-card">
                     <span class="badge">Core</span>
                     <h3>Produkt</h3>
-                    <p>AI-driven chatt med patienten i fokus för att öka effektiviteten mellan patient och sjukvård. Systemet identifierar snabbt akuta fall och guidar övriga till rätt instans eller egenvård.</p>
+                    <p>AI-driven chatt med patienten i fokus för att öka effektiviteten mellan patient och sjukvård.</p>
                 </div>
                 <div class="func-card">
                     <span class="badge">Trust</span>
                     <h3>Hållbarhet</h3>
-                    <p>Vi skapar en hållbar vårdkedja genom digital effektivisering. Genom att minimera onödiga sjukhusbesök sparar vi både på miljöresurser och skattepengar, samtidigt som arbetsmiljön förbättras.</p>
+                    <p>Vi skapar en hållbar vårdkedja genom digital effektivisering. Genom att minska onödiga resor och sjukhusbesök minskar vi vårdens klimatavtryck.</p>
                 </div>
             </div>
         </section>
