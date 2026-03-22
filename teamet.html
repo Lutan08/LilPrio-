@@ -3,21 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>grundare | lil prio</title>
+    <title>teamet | lil prio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">LiL <span>Prio</span></div>
-        <nav>
-            <ul>
-                <li><a href="index.html">hem</a></li>
-                <li><a href="planer.html">strategi</a></li>
-                <li><a href="grundare.html">grundare</a></li>
-                <li><a href="index.html#market">affärsmodell</a></li>
-            </ul>
-        </nav>
+        <div class="header-left">
+            <div class="menu-container">
+                <button class="dots-button" onclick="toggleMenu()" aria-label="Meny">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav id="popup-menu" class="dropdown-content">
+                    <ul>
+                        <li><a href="index.html">hem</a></li>
+                        <li><a href="planer.html">strategi</a></li>
+                        <li><a href="teamet.html">teamet</a></li>
+                        <li><a href="index.html#market">affärsmodell</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="logo">LiL <span>Prio</span></div>
+        </div>
+
         <a href="boka.html" class="nav-cta">boka demo</a>
     </header>
 
@@ -29,7 +41,7 @@
             
             <div class="founder-card">
                 <div class="avatar">
-                    <img src="bilder/oliver.jpg" alt="oliver larsson">
+                    <img src="oliver.jpg" alt="oliver larsson">
                 </div>
                 <div class="founder-text">
                     <h3>oliver larsson</h3>
@@ -39,7 +51,7 @@
 
             <div class="founder-card">
                 <div class="avatar">
-                    <img src="bilder/elias.jpg" alt="elias wilck">
+                    <img src="unnamed.jpg" alt="elias wilck">
                 </div>
                 <div class="founder-text">
                     <h3>elias wilck</h3>
@@ -49,7 +61,7 @@
 
             <div class="founder-card">
                 <div class="avatar">
-                    <img src="bilder/patric.jpg" alt="patric strokan">
+                    <img src="patris.jpg" alt="patric strokan">
                 </div>
                 <div class="founder-text">
                     <h3>patric strokan</h3>
@@ -59,7 +71,7 @@
 
             <div class="founder-card">
                 <div class="avatar">
-                    <img src="bilder/leon.jpg" alt="leon löwerud">
+                    <img src="z.png" alt="leon löwerud">
                 </div>
                 <div class="founder-text">
                     <h3>leon löwerud</h3>
@@ -89,6 +101,24 @@
             <p>copyright &copy; 2026 lil prio. te24sp projekt.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("popup-menu").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dots-button') && !event.target.parentElement.matches('.dots-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
