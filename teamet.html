@@ -1,71 +1,69 @@
-<!DOCTYPE html>	
+<!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grundare  lil prio</title>
+    <title>grundare | lil prio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="header-left">
-            <div class="menu-container">
-                <button class="dots-button" onclick="toggleMenu()" aria-label="Meny">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <ul id="popup-menu" class="dropdown-content">
-                    <li><a href="index.html">Hem</a></li>
-                    <li><a href="index.html#market">Affärsmodell</a></li>
-                    <li><a href="planer.html">Vår Strategi</a></li>
-                    <li><a href="teamet.html">Teamet</a></li>
-                </ul>
-            </div>
-
-            <div class="logo">LiL <span>Prio</span></div>
-        </div>
-
-        <a href="boka.html" class="nav-cta">Demo</a>
+        <div class="logo">LiL <span>Prio</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">hem</a></li>
+                <li><a href="planer.html">strategi</a></li>
+                <li><a href="grundare.html">grundare</a></li>
+                <li><a href="index.html#market">affärsmodell</a></li>
+            </ul>
+        </nav>
+        <a href="boka.html" class="nav-cta">boka demo</a>
     </header>
 
     <main class="container">
-        <span class="badge">Teamet</span>
-        <h1 class="main-title">Grundarna.</h1>
+        <span class="badge">teamet</span>
+        <h1 class="main-title">grundarna.</h1>
 
         <div class="founder-grid">
             
             <div class="founder-card">
-                <div class="avatar"></div>
+                <div class="avatar">
+                    <img src="bilder/oliver.jpg" alt="oliver larsson">
+                </div>
                 <div class="founder-text">
-                    <h1>Oliver Larsson</h1>
-                    <p>Grundare & Ai specialist</p>
+                    <h3>oliver larsson</h3>
+                    <p>grundare & ai specialist</p>
                 </div>
             </div>
 
             <div class="founder-card">
-                <div class="avatar"></div>
+                <div class="avatar">
+                    <img src="bilder/elias.jpg" alt="elias wilck">
+                </div>
                 <div class="founder-text">
-                    <h1>Elias Wilck</h1>
-                    <p>CFO</p>
+                    <h3>elias wilck</h3>
+                    <p>cfo</p>
                 </div>
             </div>
 
             <div class="founder-card">
-                <div class="avatar"></div>
+                <div class="avatar">
+                    <img src="bilder/patric.jpg" alt="patric strokan">
+                </div>
                 <div class="founder-text">
-                    <h1>Patric Strokan</h1>
-                    <p>Operativ Chef</p>
+                    <h3>patric strokan</h3>
+                    <p>operativ chef</p>
                 </div>
             </div>
 
             <div class="founder-card">
-                <div class="avatar"></div>
+                <div class="avatar">
+                    <img src="bilder/leon.jpg" alt="leon löwerud">
+                </div>
                 <div class="founder-text">
-                    <h1>Leon Löwerud</h1>
-                    <p>Produktchef</p>
+                    <h3>leon löwerud</h3>
+                    <p>produktchef</p>
                 </div>
             </div>
 
@@ -73,11 +71,11 @@
 
         <section class="school-section">
             <div class="school-info">
-                <h2>Information om gruppen</h2>
+                <h2>information om gruppen</h2>
                 <ul class="school-list">
-                    <li>Projekt: TE24SP</li>
-                    <li>Skola: Sven Eriksson Gymnasiet</li>
-                    <li>Fokus: Webbutveckling & Företagsekonomi</li>
+                    <li>projekt: te24sp</li>
+                    <li>skola: sven eriksson gymnasiet</li>
+                    <li>fokus: webbutveckling & företagsekonomi</li>
                 </ul>
             </div>
             <div class="school-image-box">
@@ -88,27 +86,9 @@
 
     <footer>
         <div class="footer-content">
-            <p>Copyright &copy; 2026 Lil Prio. TE24SP Projekt.</p>
+            <p>copyright &copy; 2026 lil prio. te24sp projekt.</p>
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById("popup-menu").classList.toggle("show");
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.dots-button') && !event.target.parentElement.matches('.dots-button')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
-	
 </body>
 </html>
