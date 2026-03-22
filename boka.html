@@ -25,7 +25,7 @@
     <a href="index.html" class="nav-cta">Till startsidan</a>
 </header>
 
-<main>
+<main class="demo-main">
 
     <!-- ── Chatt-panel ── -->
     <div class="chat-container">
@@ -69,7 +69,7 @@
 </main>
 
 <script>
-    const GROQ_API_KEY = "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";
+    const GROQ_PROXY = "/.netlify/functions/groq";
 
     // ── Symptom-chips ────────────────────────────────────────────────────────
     const CHIPS = [
@@ -269,9 +269,9 @@
     // ── API: ranka kö-patienter ──────────────────────────────────────────────
     async function rankPreGeneratedPatients() {
         try {
-            const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+            const res = await fetch(GROQ_PROXY, {
                 method: "POST",
-                headers: { "Authorization": `Bearer ${GROQ_API_KEY}`, "Content-Type": "application/json" },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     model: "llama-3.3-70b-versatile",
                     temperature: 0.3,
@@ -302,9 +302,9 @@
     async function triageUser(userText) {
         conversationHistory.push({ role: "user", content: userText });
 
-        const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        const res = await fetch(GROQ_PROXY, {
             method: "POST",
-            headers: { "Authorization": `Bearer ${GROQ_API_KEY}`, "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 model: "llama-3.3-70b-versatile",
                 messages: [
